@@ -1,6 +1,6 @@
 # Docker Symfony (PHP7-FPM - NGINX - MySQL - ELK)
 
-[![Build Status](https://travis-ci.org/WeDevBrasil/docker-symfony.svg?branch=master)](https://travis-ci.org/WeDevBrasil/docker-symfony)
+[![Build Status](https://travis-ci.org/thiagormoreira/docker-symfony.svg?branch=master)](https://travis-ci.org/thiagormoreira/docker-symfony)
 
 ![](doc/schema.png)
 
