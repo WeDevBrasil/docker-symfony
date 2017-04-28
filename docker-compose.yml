@@ -3,6 +3,8 @@ version: '2'
 services:
     db:
         image: mysql
+        ports:
+            - 3306:3306
         volumes:
             - "./.data/db:/var/lib/mysql"
         environment:
@@ -16,11 +18,8 @@ services:
             - ${SYMFONY_APP_PATH}:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
         environment:
-            DB_HOST: ${DB_HOST}
-            DB_USER: ${DB_USER}
-            DB_PASSWORD: ${DB_PASSWORD}
-            DB_NAME: ${DB_NAME}
-            DB_PORT: ${DB_PORT}
+            DATABASE_URL: mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db/${MYSQL_DATABASE}
+            CLEARDB_DATABASE_URL: mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db/${MYSQL_DATABASE}
     nginx:
         build: nginx
         ports:
